@@ -11,39 +11,35 @@ int status();
 void board(char a, char b, char c, char d, char e, char f, char g, char h, char i){
 
  int v = status();
-
-    if (v == 1){
+    if (v ==1 ){
         system("cls");
-        cout << "You Win!!!";
+        cout << "You Won!!";
     }
-    else if (v == 0){
-        cout << "Draw";
+    else if(v == 0){
+        cout << "Game over";
+
     }
     else{
+
         system("cls");
 
-    cout << "\t\t\tTIC TAC TOE \n\n\n" << endl;
-    cout << "\t\t\t\tPlayer 1[X]" <<endl;
-    cout << "\t\t\t\tPlayer 2[O]\n" <<endl;
-    cout << "\t\t\t\t     |     |    " << endl ;
-    cout << "\t\t\t\t  "  <<a<<  "  |  "<< b <<"  |  "<<c<<"  " << endl;
-    cout << "\t\t\t\t_____|_____|_____" << endl ;
-    cout << "\t\t\t\t     |     |    " << endl ;
-    cout << "\t\t\t\t  "  <<d<<  "  |  "<< e <<"  |  "<<f<<"  " << endl;
-    cout << "\t\t\t\t_____|_____|_____" << endl;
-    cout << "\t\t\t\t     |     |" << endl;
-    cout << "\t\t\t\t  "  <<g<<  "  |  "<< h <<"  |  "<<i<<"  " << endl;
-    cout << "\t\t\t\t     |     |\n" << endl;
-
-
-
-
-
+    cout << "\tTIC TAC TOE \n\n\n" << endl;
+    cout << "\tPlayer 1[X]" <<endl;
+    cout << "\tPlayer 2[O]\n" <<endl;
+    cout << "\t     |     |    " << endl ;
+    cout << "\t  "  <<a<<  "  |  "<< b <<"  |  "<<c<<"  " << endl;
+    cout << "\t_____|_____|_____" << endl ;
+    cout << "\t     |     |    " << endl ;
+    cout << "\t  "  <<d<<  "  |  "<< e <<"  |  "<<f<<"  " << endl;
+    cout << "\t_____|_____|_____" << endl;
+    cout << "\t     |     |" << endl;
+    cout << "\t  "  <<g<<  "  |  "<< h <<"  |  "<<i<<"  " << endl;
+    cout << "\t     |     |\n" << endl;
     }
 }
 
 void P1 (){
-cout << "\t\t\t\tPlayer 1[X] turn: " <<endl;
+cout << "\t\n\n\nPlayer 1[X] turn: " <<endl;
 cin >> choice;
 marker = 'X';
 
@@ -86,7 +82,7 @@ board(j,k,l,m,n,o,p,q,r);
 
 void P2 () {
 
-cout << " \t\t\t\tPlayer 2[O] turn: " <<endl;
+cout << "\t\n\n\nPlayer 2[O] turn: " <<endl;
    cin >> choice;
    marker = 'O';
 
@@ -190,11 +186,5 @@ int main()
         P2();
         P1();
 
-system("cls");
-
-
-// get output logic
 return 0;
 }
-
-
