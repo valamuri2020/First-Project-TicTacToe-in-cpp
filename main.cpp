@@ -1,18 +1,30 @@
 #include <iostream>
 
-int choice;
-char marker;
-char j, k, l, m, n, o, p, q, r;
-
 using namespace std;
 
 
- void board(char a, char b, char c, char d, char e, char f, char g, char h, char i){  ;
-system("cls");
+int choice;
+char marker;
+char j, k, l, m, n, o, p, q, r;
+int status();
 
-    cout << " \t\t TIC TAC TOE \n\n\n" << endl;
+void board(char a, char b, char c, char d, char e, char f, char g, char h, char i){
+
+ int v = status();
+
+    if (v == 1){
+        system("cls");
+        cout << "You Win!!!";
+    }
+    else if (v == 0){
+        cout << "Draw";
+    }
+    else{
+        system("cls");
+
+    cout << "\t\t\tTIC TAC TOE \n\n\n" << endl;
     cout << "\t\t\t\tPlayer 1[X]" <<endl;
-    cout << "\t\t\t\tPlayer 2[O]" <<endl;
+    cout << "\t\t\t\tPlayer 2[O]\n" <<endl;
     cout << "\t\t\t\t     |     |    " << endl ;
     cout << "\t\t\t\t  "  <<a<<  "  |  "<< b <<"  |  "<<c<<"  " << endl;
     cout << "\t\t\t\t_____|_____|_____" << endl ;
@@ -22,8 +34,13 @@ system("cls");
     cout << "\t\t\t\t     |     |" << endl;
     cout << "\t\t\t\t  "  <<g<<  "  |  "<< h <<"  |  "<<i<<"  " << endl;
     cout << "\t\t\t\t     |     |\n" << endl;
-    }
 
+
+
+
+
+    }
+}
 
 void P1 (){
 cout << "\t\t\t\tPlayer 1[X] turn: " <<endl;
@@ -62,16 +79,15 @@ marker = 'X';
     default:{;
     cout << "Invalid choice \n";
     }
-
 }
 board(j,k,l,m,n,o,p,q,r);
-}
 
+}
 
 void P2 () {
 
 cout << " \t\t\t\tPlayer 2[O] turn: " <<endl;
-    cin >> choice;
+   cin >> choice;
    marker = 'O';
 
 switch(choice){
@@ -113,6 +129,41 @@ board(j,k,l,m,n,o,p,q,r);
 
 }
 
+int status()
+{
+    if ( j == k && k == l)
+
+        return 1;
+    else if (m == n && n == o)
+
+        return 1;
+    else if (p == q && q == r)
+
+        return 1;
+    else if (j == m && m == p)
+
+        return 1;
+    else if (k == n && n == q)
+
+        return 1;
+    else if (l == o && o == r)
+
+        return 1;
+    else if (j == n && n == r)
+
+        return 1;
+    else if (l == n && n == p)
+
+        return 1;
+    else if (j != '1' && k != '2' && l != '3'
+                    && m != '4' && n != '5' && o != '6'
+                  && p != '7' && q != '8' && r != '9')
+
+        return 0;
+    else
+        return -1;
+}
+
 int main()
 {
     j = '1';
@@ -129,27 +180,21 @@ int main()
    board('1','2','3','4','5','6','7','8','9');
 
 
-P1();
-P2();
-P1();
-P2();
-P1();
-P2();
-P1();
-P2();
-P1();
+        P1();
+        P2();
+        P1();
+        P2();
+        P1();
+        P2();
+        P1();
+        P2();
+        P1();
+
+system("cls");
 
 
-if ('X' == j&&k&&l || 'X' == j&&m&&p || 'X' == j&&n&&r || 'X' == m&&n&&o || 'X' == k&&n&&q || 'X' == l&&n&&p || 'X' == l&&o&&r || 'X' == p&&q&&r) {
-
-    cout << "Player 1 wins!" ;
-
-}else if ('O' == j&&k&&l || 'O' == j&&m&&p || 'O' == j&&n&&r || 'O' == m&&n&&o || 'O' == k&&n&&q || 'O' == l&&n&&p || 'O' == l&&o&&r || 'O' == p&&q&&r) {
-
-    cout << "Player 2 wins!" ;
-}else {
-       cout << "Draw";
-    }
-
+// get output logic
 return 0;
 }
+
+
